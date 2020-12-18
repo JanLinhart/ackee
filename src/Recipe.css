@@ -1,0 +1,42 @@
+.recipe{
+    display: flex;
+    height:180px;
+    width:100%;
+    border-bottom:1px solid gray;
+    margin-bottom:5%;
+    align-items:center;
+   
+    
+}
+.second-column{
+    display: flex;
+    flex-direction: column;
+    width:90%;
+    
+    
+}
+img{
+    width: 50%;
+    height: 50%;
+    border-radius: 5px;
+}
+p{
+    margin-bottom: 0px;
+    font-family: 'Roboto', sans-serif;
+    
+    
+   
+}
+.name{
+    color:blue;
+    font-weight:bold;
+}
+.time i{
+    margin-right:5%;
+}
+.time span{
+    margin-left: 5%;
+}
+.second-column a{
+    text-decoration: none;
+}

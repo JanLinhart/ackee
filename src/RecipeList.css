@@ -1,0 +1,30 @@
+.recipe-list{
+    
+    width:80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    
+    
+}
+.navbar{
+    display: flex;
+    justify-content:space-between;
+    height:60px;
+    border-bottom: 1px solid gray;
+    align-items: center;
+    
+}
+.navbar h1{
+    color:rgb(94, 93, 93);
+    margin: 10px;
+}
+.plus{
+    color:blue;
+    font-size:3rem;
+    margin: 10px;
+    
+    
+}
+.navbar a{
+    text-decoration: none;
+}
