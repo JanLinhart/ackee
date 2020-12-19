@@ -10,7 +10,7 @@ function Recipe(props) {
         <img src={Image} alt="cam"/>
         </div>
         <div className="second-column">
-     <Link to={`/${props.name}`}><p className="name">{props.name}</p></Link> 
+     <Link to={ `/details/${props.id}`}><p className="name">{props.name}</p></Link> 
        <p> {props.score.toFixed(2)}</p>
        <p className="time"><i className="far fa-clock"></i>{props.duration}<span>min.</span></p> 
         </div>

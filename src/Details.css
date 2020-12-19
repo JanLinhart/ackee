@@ -1,0 +1,53 @@
+
+.food-photo img{
+    position:relative;
+    width:100%;
+    left:0px;
+    border-radius: 0px;
+    
+    
+}
+
+.food-photo h1{
+    position: absolute;
+    top:130px;
+    color: #FFFFFF;
+    left:5%;
+    text-shadow: 2px 2px 0 #4074b5, 2px -2px 0 #4074b5, -2px 2px 0 #4074b5, -2px -2px 0 #4074b5, 2px 0px 0 #4074b5, 0px 2px 0 #4074b5, -2px 0px 0 #4074b5, 0px -2px 0 #4074b5;
+    color: #FFFFFF;
+    
+}
+.star-line{
+   
+    display: flex;
+    justify-content: space-around;
+    width:100%;
+    height:80px;
+    background-color: #4074b5;
+    color:white;
+    
+    
+}
+.info{
+   padding:50px;
+    width:90%;
+  margin:auto ;
+    
+}
+.description{
+    width:90%;
+    margin: auto;
+}
+.ingredience{
+    margin-left: 20%;
+    color:#4074b5;
+    
+}
+.score2{
+    width:100%;
+    margin-left: 50%;
+}
+.ing{
+    width:90%;
+    margin:auto;
+}

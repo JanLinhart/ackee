@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom'
 
 function RecipeList() {
 
- const [recipes,setRecipes]=useContext(RecipeContext)
+ const {recipes}=useContext(RecipeContext)
   
   return (
 <>

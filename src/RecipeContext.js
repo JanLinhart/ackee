@@ -1,13 +1,19 @@
-import React,{useState,useEffect,createContext} from 'react';
+import React,{useState,useEffect,createContext,useReducer} from 'react';
 import axios from 'axios';
-
+import AppReducer from './AppReducer'
 
 
 export const RecipeContext=createContext([[],() => {}]);
 
 export default function RecipeProvider(props) {
     const[recipes,setRecipes]=useState([])
-    
+    const[state,dispatch]=useReducer(AppReducer,recipes)
+    function addTransaction(id){
+      dispatch({
+        type:'ADD_RECIPE',
+        payload:id
+      })
+    }
   
     useEffect(() => {
   axios.get('https://cookbook.ack.ee/api/v1/recipes?limit=10&offset=0')
@@ -21,7 +27,7 @@ export default function RecipeProvider(props) {
     
     return (
        
-<RecipeContext.Provider value={[recipes,setRecipes]}>
+<RecipeContext.Provider value={{recipes,setRecipes,addTransaction}}>
     {props.children}
 </RecipeContext.Provider>
       
