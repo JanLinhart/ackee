@@ -8,7 +8,7 @@ export const RecipeContext=createContext([[],() => {}]);
 export default function RecipeProvider(props) {
     const[recipes,setRecipes]=useState([])
     const[state,dispatch]=useReducer(AppReducer,recipes)
-    function addTransaction(id){
+    function addRecipe(id){
       dispatch({
         type:'ADD_RECIPE',
         payload:id
@@ -27,7 +27,7 @@ export default function RecipeProvider(props) {
     
     return (
        
-<RecipeContext.Provider value={{recipes,setRecipes,addTransaction}}>
+<RecipeContext.Provider value={{recipes,setRecipes,addRecipe}}>
     {props.children}
 </RecipeContext.Provider>
       
