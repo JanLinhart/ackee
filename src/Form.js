@@ -1,7 +1,7 @@
 import React from 'react'
 import './Form.css'
 import {RecipeContext} from './RecipeContext';
-import {useContext,useState} from 'react';
+import {useContext,useState,useEffect} from 'react';
 import axios from 'axios';
 
 function Form() {
@@ -12,14 +12,17 @@ function Form() {
     const[time,setTime]=useState(0);
     const [score,setScore]=useState(0);
     const{recipes,setRecipes}=useContext(RecipeContext)
+    useEffect(()=>{console.log("recipes"+JSON.stringify(recipes))},[recipes])
     const onSubmit=e=>{
       const newRecipe={id:Math.floor(Math.random() * 100000000),
       description:postup,name:nazev,duration:time,info:uvodni,score:+score}
       
       e.preventDefault()
       
-      axios.post("https://cookbook.ack.ee/api/v1/recipes",newRecipe)
-      .then(setRecipes([...recipes,newRecipe]))   
+      axios.post("https://cookbook.ack.ee/api/v1/recipes", newRecipe)
+      .then(res => setRecipes(res.data))
+      .catch(error => console.log(error));
+      
     
     }
     
