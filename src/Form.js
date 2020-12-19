@@ -17,8 +17,8 @@ function Form() {
       description:postup,name:nazev,duration:time,info:uvodni,score:+score}
       
       e.preventDefault()
-      setRecipes([...recipes,newRecipe])
-      axios.post("https://cookbook.ack.ee/api/v1/recipes")
+     
+      axios.post("https://cookbook.ack.ee/api/v1/recipes",newRecipe)
          
     
     }
