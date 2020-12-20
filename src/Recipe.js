@@ -2,7 +2,7 @@ import React from 'react'
 import Image from "./vitaminDfood-1132105308-770x553.jpg"
 import './Recipe.css'
 import {Link} from 'react-router-dom'
-import Details from './Details';
+// import Details from './Details';
 function Recipe(props) {
     return (
         <div className="recipe">
