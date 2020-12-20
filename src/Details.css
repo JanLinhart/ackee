@@ -1,12 +1,18 @@
 
+.food-photo{
+    height:250px; 
+}
+
 .food-photo img{
     position:relative;
     width:100%;
     left:0px;
     border-radius: 0px;
+    height:100%;
     
     
 }
+
 
 .food-photo h1{
     position: absolute;
@@ -17,16 +23,30 @@
     color: #FFFFFF;
     
 }
+.food-photo .arrow{
+    position: absolute;
+    top:30px;
+    color: #FFFFFF;
+    left:-30px;
+    text-shadow: 2px 2px 0 #4074b5, 2px -2px 0 #4074b5, -2px 2px 0 #4074b5, -2px -2px 0 #4074b5, 2px 0px 0 #4074b5, 0px 2px 0 #4074b5, -2px 0px 0 #4074b5, 0px -2px 0 #4074b5;
+    font-size: 1.5rem;
+    
+}
 .star-line{
    
     display: flex;
     justify-content: space-around;
+    align-items: center;
     width:100%;
     height:80px;
     background-color: #4074b5;
     color:white;
     
     
+    
+}
+.star-line .duration{
+    font-size: 0.8rem;
 }
 .info{
    padding:50px;
@@ -43,11 +63,25 @@
     color:#4074b5;
     
 }
-.score2{
-    width:100%;
-    margin-left: 50%;
-}
+
 .ing{
     width:90%;
     margin:auto;
+}
+.stars{
+   
+    width:100%;
+    
+    outline: none;
+    background-color:#4074b5; 
+    margin-top: 20px;
+    height:120px;
+}
+.star{
+    margin-right:20%;
+    margin-left: 23%;
+    outline: none;
+}
+.staa{
+    font-size: 1rem;
 }

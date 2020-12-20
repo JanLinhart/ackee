@@ -30,7 +30,7 @@ function Form() {
     axios
       .post('https://cookbook.ack.ee/api/v1/recipes', newRecipe)
       .then((res) => {
-        console.log(res.data); // confirm if it's the new recipe
+        console.log(res.data); 
         updateRecipes();
       })
       .catch((error) => console.log(error));

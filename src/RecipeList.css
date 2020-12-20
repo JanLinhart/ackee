@@ -9,10 +9,13 @@
 .navbar{
     display: flex;
     justify-content:space-between;
-    height:60px;
+    height: 70px;
     border-bottom: 1px solid gray;
     align-items: center;
     
+}
+.navbar h3{
+    color:rgb(94, 93, 93);
 }
 .navbar h1{
     color:rgb(94, 93, 93);
@@ -27,4 +30,25 @@
 }
 .navbar a{
     text-decoration: none;
+}
+.recipe-input{
+    width:20rem;
+    height:3rem;
+    border-radius:1rem;
+    background: linear-gradient(#4074b5, rgb(154, 154, 216));
+    border:2px solid #4074b5;
+    font-size: 1.5em;
+    color: white;
+}
+.recipe-input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 1; /* Firefox */
+  }
+input[type="text"], input[type="password"], textarea, select { 
+    outline: none;
+}
+.hledej{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
 }

@@ -12,13 +12,9 @@ export const RecipeContext = createContext({
 
 export default function RecipeProvider(props) {
   const [recipes, setRecipes] = useState([]);
-  // the state below is not being used anywhere so I commented it
-  // const [state, dispatch] = useReducer(AppReducer, { recipes });
+  
   const updateRecipes = (id) => {
-    // dispatch({
-    //   type: 'UPDATE_RECIPES',
-    //   payload: id,
-    // });
+ 
     axios
       .get('https://cookbook.ack.ee/api/v1/recipes?limit=1000&offset=0')
       .then((res) => setRecipes(res.data));

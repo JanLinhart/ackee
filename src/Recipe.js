@@ -11,7 +11,7 @@ function Recipe(props) {
         </div>
         <div className="second-column">
      <Link to={ `/details/${props.id}`}><p className="name">{props.name}</p></Link> 
-       <p> {props.score.toFixed(2)}</p>
+     <div className="sta"><i class="fas fa-star"/> <i class="fas fa-star"/> <i class="fas fa-star"/> <i class="fas fa-star"/></div>
        <p className="time"><i className="far fa-clock"></i>{props.duration}<span>min.</span></p> 
         </div>
         </div>
