@@ -3,7 +3,7 @@ import './Form.css'
 import {RecipeContext} from './RecipeContext';
 import {useContext,useState,useEffect} from 'react';
 import axios from 'axios';
-
+import {Link} from 'react-router-dom'
 function Form() {
     const [nazev,setNazev]=useState('');
     const[uvodni,setUvodni]=useState('');
@@ -11,24 +11,34 @@ function Form() {
     const[postup,setPostup]=useState('');
     const[time,setTime]=useState(0);
     const [score,setScore]=useState(0);
-    const{recipes,setRecipes}=useContext(RecipeContext)
-    useEffect(()=>{console.log("recipes"+JSON.stringify(recipes))},[recipes])
+    const{updateRecipes}=useContext(RecipeContext)
+   
     const onSubmit=e=>{
-      const newRecipe={id:Math.floor(Math.random() * 100000000),
-      description:postup,name:nazev,duration:time,info:uvodni,score:+score}
-      
+     
       e.preventDefault()
+      const newRecipe={name:nazev,description:postup,ingredients:[ingredience],duration:+time,info:uvodni}
+      
+      
       
       axios.post("https://cookbook.ack.ee/api/v1/recipes", newRecipe)
-      .then(res => setRecipes(res.data))
+      .then(res => {
+        console.log(res.data) // confirm if it's the new recipe
+        updateRecipes()
+        })
       .catch(error => console.log(error));
       
-    
+      
+     
     }
+   
     
     return (
         <>
-        <button className="pridat" onClick={onSubmit}>+</button>
+        
+    <div className="navbar">  <Link to="/"><i class="fas fa-arrow-left arrow"></i></Link>  
+        <button className="pridat" onClick={onSubmit}>+</button></div>
+       
+        
         <form className="form" >
           <p className="nazev">Název receptu</p>
           <input type="text" value={nazev}
@@ -40,12 +50,14 @@ function Form() {
           <input placeholder="Vaše ingredience" type="text"
           value={ingredience}
           onChange={(e) => setIngredience(e.target.value)}/>
-          <button>+ Přidat</button>
+          
           <input type="text" className="postup" placeholder="Postup"
           value={postup}
           onChange={(e) => setPostup(e.target.value)}/>
+          
          <input type="text" placeholder="Čas" className="cas" value={time}
           onChange={(e) => setTime(e.target.value)}/>
+          
         </form>
         </>
     )

@@ -10,8 +10,7 @@ import Recipe from './Recipe'
 
 function App() {
 
-  const [recipes,setRecipes]=useContext(RecipeContext) 
-  
+ 
   return (
 
 <>

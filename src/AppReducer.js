@@ -1,10 +1,10 @@
 export default (state,action)=>{
     switch(action.type){
   
-        case 'ADD_RECIPE':
+        case 'UPDATE_RECIPES':
             return{
                 ...state,
-                recipes:[action.payload,...state.recipes]
+                recipes:[...state.recipes, action.payload]
             }
         default:
             return state;
