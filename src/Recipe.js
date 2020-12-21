@@ -2,12 +2,11 @@ import React from 'react'
 import Image from "./vitaminDfood-1132105308-770x553.jpg"
 import './Recipe.css'
 import {Link} from 'react-router-dom'
-import { RecipeContext } from './RecipeContext';
-import { useContext,useState } from 'react';
-// import Details from './Details';
-const initialRatings = JSON.parse(localStorage.getItem("ratings") || "[]");
+
+
+
 function Recipe(props) {
-    const { recipes } = useContext(RecipeContext);
+    
     return (
         <div className="recipe">
         <div className="first-column">

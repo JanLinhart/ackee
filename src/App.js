@@ -6,12 +6,11 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  // Redirect,
+ 
 } from 'react-router-dom';
-// import { RecipeContext } from './RecipeContext';
-// import { useContext } from 'react';
+
 import Details from './Details';
-// import Recipe from './Recipe';
+
 
 function App() {
   return (

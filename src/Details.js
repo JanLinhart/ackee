@@ -6,7 +6,7 @@ import Image from './vitaminDfood-1132105308-770x553.jpg';
 import {Link} from 'react-router-dom'
 import ReactStars from 'react-rating-stars-component'
  import { RecipeContext } from './RecipeContext';
- import { useContext,useRef } from 'react';
+ import { useContext } from 'react';
 
 function Details() {
   const [details, setDetails] = useState([]);
@@ -14,7 +14,7 @@ function Details() {
   const initialRatings = JSON.parse(localStorage.getItem(`rating-${recipeId}`) || "[]");
   const{recipes,setRecipes}=useContext(RecipeContext)
   const[rating,setRating]=useState(initialRatings)
-  const[parse,setParse]=useState(true)
+  
   
   useEffect(() => {
     axios
@@ -29,7 +29,7 @@ function Details() {
 
 
   const ratingChanged = (newRating) => {
-    setParse(false)
+    
     var rate={
       score:newRating
       
@@ -73,7 +73,7 @@ function Details() {
     <div className="stars">
 
       <ReactStars
-      classNames={parse?"star":"star2"}
+      classNames="star"
       size={48}
       onChange={ratingChanged}
       count={5}

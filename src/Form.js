@@ -4,7 +4,7 @@ import { RecipeContext } from './RecipeContext';
 import {
   useContext,
   useState,
-  // , useEffect
+  
 } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
@@ -14,7 +14,7 @@ function Form() {
   const [ingredience, setIngredience] = useState('');
   const [postup, setPostup] = useState('');
   const [time, setTime] = useState(0);
-  // const [score, setScore] = useState(0);
+  
   const { updateRecipes } = useContext(RecipeContext);
 
   const onSubmit = (e) => {
