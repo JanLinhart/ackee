@@ -43,9 +43,11 @@ function Form() {
         <Link to="/">
           <i class="fas fa-arrow-left arrow"></i>
         </Link>
+        
         <button className="pridat" onClick={onSubmit}>
           +
         </button>
+        
       </div>
 
       <form className="form">

@@ -11,12 +11,12 @@
 .second-column{
     display: flex;
     flex-direction: column;
-    width:90%;
+    width:200%;
     
     
 }
 img{
-    width: 50%;
+    width: 70%;
     height: 50%;
     border-radius: 5px;
 }
@@ -30,6 +30,7 @@ p{
 .name{
     color:blue;
     font-weight:bold;
+    
 }
 .time i{
     margin-right:5%;
@@ -41,5 +42,6 @@ p{
     text-decoration: none;
 }
 .sta{
-    font-size: 0.5rem;
+    font-size: 0.7rem;
+    color:#4074b5;
 }

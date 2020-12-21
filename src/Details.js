@@ -11,8 +11,9 @@ import ReactStars from 'react-rating-stars-component'
 function Details() {
   const [details, setDetails] = useState([]);
   const { recipeId } = useParams();
-  const[score,setScore]=useState(0)
+  const initialRatings = JSON.parse(localStorage.getItem(`rating-${recipeId}`) || "[]");
   const{recipes,setRecipes}=useContext(RecipeContext)
+  const[rating,setRating]=useState(initialRatings)
   useEffect(() => {
     axios
       .get(`https://cookbook.ack.ee/api/v1/recipes/${recipeId}`)
@@ -20,16 +21,22 @@ function Details() {
     
   });
 
+  useEffect(() => {
+    localStorage.setItem(`rating-${recipeId}`, JSON.stringify(rating));
+  }, [rating, recipeId])
+
+
   const ratingChanged = (newRating) => {
-    setScore(newRating)
+    
     var rate={
-      score:score
+      score:newRating
       
     }
-    console.log(score); 
+    setRating(newRating)
     axios.post(`https://cookbook.ack.ee/api/v1/recipes/${recipeId}/ratings`,rate)
     .then((res) => {
-      
+     console.log(res.data) 
+      setRecipes(recipes)
       
     })
     
@@ -45,8 +52,9 @@ function Details() {
         </div>
         <div className="star-line">
        
-      <div className="staa"><i class="fas fa-star"/> <i class="fas fa-star"/> <i class="fas fa-star"/> <i class="fas fa-star"/></div>    
-        
+        {new Array(rating).fill(null).map(() => (
+          <i className="fas fa-star stari"/>
+        ))}
         
         <p className="duration"><i className="far fa-clock"></i>{details.duration}<span>min.</span></p>
         </div>
@@ -65,7 +73,7 @@ function Details() {
       size={48}
       onChange={ratingChanged}
       count={5}
-      value={5}
+      value={1}
       edit
       />
       </div>

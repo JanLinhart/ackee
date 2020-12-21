@@ -85,3 +85,9 @@
 .staa{
     font-size: 1rem;
 }
+p span{
+    margin-left: 5px;
+}
+p i{
+    margin-right: 5px;
+}

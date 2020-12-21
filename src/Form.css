@@ -44,9 +44,9 @@ input[type="text"], input[type="password"], textarea, select {
     border-radius:5px;
     color: rgb(223, 126, 142);
 }
-.pridat{
-    margin-left: 85%;
-    background-color:transparent;
+.navbar .pridat{
+    margin-left: 0%;
+    background-color: transparent;
     border:transparent;
     font-size:2rem;
     color:blue;
